@@ -39,7 +39,7 @@ export default function HomePage({ navigate }) {
 
         <div style={{ maxWidth: 800, margin: "0 auto", position: "relative", zIndex: 1 }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(196,98,45,0.15)", border: "1px solid rgba(196,98,45,0.3)", padding: "8px 20px", marginBottom: 40 }}>
-            <span style={{ fontSize: 14, fontFamily: sans, color: "#c4622d", fontWeight: 500, letterSpacing: 1 }}>🌟 First 200 users get Pro FREE forever</span>
+            <span style={{ fontSize: 14, fontFamily: sans, color: "#c4622d", fontWeight: 500, letterSpacing: 1 }}>🌟 🔥 Only 8 Che AF + 28 Mix-R Pioneer spots left</span>
           </div>
 
           <h1 style={{ fontFamily: serif, fontSize: "clamp(48px, 10vw, 100px)", fontWeight: 900, lineHeight: 0.92, color: "#f5f0e8", letterSpacing: -3, marginBottom: 32, opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(30px)", transition: "all 0.8s" }}>
@@ -61,7 +61,7 @@ export default function HomePage({ navigate }) {
             </a>
           </div>
 
-          <p style={{ fontFamily: sans, fontSize: 13, color: "rgba(245,240,232,0.3)", marginTop: 24 }}>No credit card · Free forever for first 200 users · Works on any device</p>
+          <p style={{ fontFamily: sans, fontSize: 13, color: "rgba(245,240,232,0.3)", marginTop: 24 }}>No credit card · Free forever for first 30 users · Works on any device</p>
         </div>
       </section>
 
@@ -206,7 +206,7 @@ export default function HomePage({ navigate }) {
             Start cooking.<br />Start mixing.<br /><em style={{ fontStyle: "italic", opacity: 0.85 }}>Start today.</em>
           </h2>
           <p style={{ fontFamily: sans, fontSize: 16, color: "rgba(255,255,255,0.8)", marginBottom: 40 }}>
-            First 200 users get Pro free forever. Limited spots remaining.
+            Only 8 Che AF spots and 28 Mix-R spots left. After that it's $2.99 NZD/month.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
             <a href="https://che-af.vercel.app" target="_blank" rel="noopener noreferrer"

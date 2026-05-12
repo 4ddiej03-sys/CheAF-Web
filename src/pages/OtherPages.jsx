@@ -261,7 +261,7 @@ export function ContactPage({ navigate }) {
             {[
               { emoji: "🍳", title: "Che AF Support", email: "support@che-af.vercel.app", desc: "Recipe app questions, bugs, feedback" },
               { emoji: "🍹", title: "Mix-R Support", email: "support@mix-r.vercel.app", desc: "Cocktail app questions, bugs, feedback" },
-              { emoji: "💼", title: "Business Enquiries", email: "support@che-af.vercel.app", desc: "Partnerships, press, collaborations" },
+              { emoji: "🌿", title: "Coming Soon", email: "support@che-af.vercel.app", desc: "Our newest project is almost here" },
               { emoji: "📸", title: "Instagram", email: "@cheaf_cooklikeyouknow", desc: "Follow us for recipes and cocktail tips", isHandle: true },
             ].map((c, i) => (
               <div key={i} style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16, padding: 28 }}>
@@ -269,8 +269,8 @@ export function ContactPage({ navigate }) {
                 <h3 style={{ fontFamily: serif, fontSize: 18, fontWeight: 700, color: "#1a202c", marginBottom: 8 }}>{c.title}</h3>
                 <p style={{ fontFamily: sans, fontSize: 13, color: "#718096", marginBottom: 12, lineHeight: 1.5 }}>{c.desc}</p>
                 {c.isHandle ? (
-                  <a href="https://www.instagram.com/cheaf_cooklikeyouknow" target="_blank" rel="noopener noreferrer"
-                    style={{ fontFamily: sans, fontSize: 14, fontWeight: 600, color: "#c4622d", textDecoration: "none" }}>{c.email}</a>
+                  <a href="https://www.instagram.com/cheaf_cooklikeyouknow" target="_blank" rel="noopener noreferrer" 
+                    style={{ fontFamily: sans, fontSize: 14, fontWeight: 600, color: "#c4622d", textDecoration: "none" }}>{c.email}</a>  
                 ) : (
                   <a href={`mailto:${c.email}`}
                     style={{ fontFamily: sans, fontSize: 14, fontWeight: 600, color: "#c4622d", textDecoration: "none" }}>{c.email}</a>
