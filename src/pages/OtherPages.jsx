@@ -1,4 +1,5 @@
 // src/pages/FeaturesPage.jsx
+import React, { useState } from "react";
 export function FeaturesPage({ navigate }) {
   const serif = "'Playfair Display', Georgia, serif";
   const sans  = "'DM Sans', system-ui, sans-serif";
@@ -240,82 +241,181 @@ export function AboutPage({ navigate }) {
 }
 
 // src/pages/ContactPage.jsx
+// Replace your ContactPage function in OtherPages.jsx with this one
+// Uses Formspree — submissions go straight to 4ddiej03@gmail.com
+
 export function ContactPage({ navigate }) {
   const serif = "'Playfair Display', Georgia, serif";
   const sans  = "'DM Sans', system-ui, sans-serif";
+  const [status, setStatus] = React.useState("idle"); // idle | sending | success | error
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setStatus("sending");
+    const form = e.target;
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch("https://formspree.io/f/mgodbnol", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+      if (res.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch (_) {
+      setStatus("error");
+    }
+  }
 
   return (
-    <div style={{ paddingTop: 68 }}>
-      <section style={{ background: "#0a0a0a", padding: "80px 24px 60px", textAlign: "center" }}>
-        <div style={{ maxWidth: 600, margin: "0 auto" }}>
-          <p style={{ fontFamily: sans, fontSize: 13, fontWeight: 600, color: "#c4622d", letterSpacing: 3, textTransform: "uppercase", marginBottom: 16 }}>Contact</p>
-          <h1 style={{ fontFamily: serif, fontSize: "clamp(36px, 6vw, 64px)", fontWeight: 900, color: "#f5f0e8", lineHeight: 0.95 }}>
-            Get in <em style={{ color: "#c4622d", fontStyle: "italic" }}>touch.</em>
-          </h1>
-        </div>
-      </section>
+    <div style={{ paddingTop: 72 }}>
+      <section style={{ padding: "100px 40px", background: "#faf6ef", minHeight: "80vh" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 100, alignItems: "start" }}>
 
-      <section style={{ padding: "80px 24px", background: "#faf6ef" }}>
-        <div style={{ maxWidth: 700, margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 48 }}>
-            {[
-              { emoji: "🍳", title: "Che AF Support", email: "support@che-af.vercel.app", desc: "Recipe app questions, bugs, feedback" },
-              { emoji: "🍹", title: "Mix-R Support", email: "support@mix-r.vercel.app", desc: "Cocktail app questions, bugs, feedback" },
-              { emoji: "🌿", title: "Coming Soon", email: "support@che-af.vercel.app", desc: "Our newest project is almost here" },
-              { emoji: "📸", title: "Instagram", email: "@cheaf_cooklikeyouknow", desc: "Follow us for recipes and cocktail tips", isHandle: true },
-            ].map((c, i) => (
-              <div key={i} style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 16, padding: 28 }}>
-                <span style={{ fontSize: 32, display: "block", marginBottom: 12 }}>{c.emoji}</span>
-                <h3 style={{ fontFamily: serif, fontSize: 18, fontWeight: 700, color: "#1a202c", marginBottom: 8 }}>{c.title}</h3>
-                <p style={{ fontFamily: sans, fontSize: 13, color: "#718096", marginBottom: 12, lineHeight: 1.5 }}>{c.desc}</p>
-                {c.isHandle ? (
-                  <a href="https://www.instagram.com/cheaf_cooklikeyouknow" target="_blank" rel="noopener noreferrer" 
-                    style={{ fontFamily: sans, fontSize: 14, fontWeight: 600, color: "#c4622d", textDecoration: "none" }}>{c.email}</a>  
-                ) : (
-                  <a href={`mailto:${c.email}`}
-                    style={{ fontFamily: sans, fontSize: 14, fontWeight: 600, color: "#c4622d", textDecoration: "none" }}>{c.email}</a>
-                )}
+          {/* LEFT */}
+          <div>
+            <p style={{ fontFamily: sans, fontSize: 11, fontWeight: 500, letterSpacing: 4, textTransform: "uppercase", color: "#888", marginBottom: 16 }}>Contact</p>
+            <h1 style={{ fontFamily: serif, fontSize: "clamp(40px, 5vw, 72px)", fontWeight: 300, color: "#1a202c", lineHeight: 0.95, marginBottom: 40 }}>
+              Let's create<br /><em style={{ fontStyle: "italic", fontWeight: 700 }}>something.</em>
+            </h1>
+            <div style={{ width: 60, height: 1, background: "#1a202c", marginBottom: 40 }} />
+            <p style={{ fontFamily: sans, fontSize: 16, color: "#718096", lineHeight: 1.9, marginBottom: 48 }}>
+              Whether you have a project in mind, want to collaborate, or just want to say hello — we'd love to hear from you. Every great project starts with a conversation.
+            </p>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+
+              <div style={{ borderBottom: "1px solid rgba(0,0,0,0.06)", paddingBottom: 20 }}>
+                <p style={{ fontFamily: sans, fontSize: 10, fontWeight: 500, letterSpacing: 3, textTransform: "uppercase", color: "#aaa", marginBottom: 6 }}>General Enquiries</p>
+                <a href="mailto:4ddiej03@gmail.com" style={{ fontFamily: serif, fontSize: 18, color: "#1a202c", textDecoration: "none" }}>4ddiej03@gmail.com</a>
               </div>
-            ))}
+
+              <div style={{ borderBottom: "1px solid rgba(0,0,0,0.06)", paddingBottom: 20 }}>
+                <p style={{ fontFamily: sans, fontSize: 10, fontWeight: 500, letterSpacing: 3, textTransform: "uppercase", color: "#aaa", marginBottom: 6 }}>Instagram</p>
+                <a href="https://www.instagram.com/cheaf_cooklikeyouknow" target="_blank" rel="noopener noreferrer"
+                  style={{ fontFamily: serif, fontSize: 18, color: "#1a202c", textDecoration: "none", display: "block", marginBottom: 6 }}>
+                  @cheaf_cooklikeyouknow
+                </a>
+                <a href="https://www.instagram.com/mixr_shakewhatyouvegot" target="_blank" rel="noopener noreferrer"
+                  style={{ fontFamily: serif, fontSize: 18, color: "#1a202c", textDecoration: "none", display: "block" }}>
+                  @mixr_shakewhatyouvegot
+                </a>
+              </div>
+
+              <div style={{ borderBottom: "1px solid rgba(0,0,0,0.06)", paddingBottom: 20 }}>
+                <p style={{ fontFamily: sans, fontSize: 10, fontWeight: 500, letterSpacing: 3, textTransform: "uppercase", color: "#aaa", marginBottom: 6 }}>Che AF App</p>
+                <a href="https://che-af.vercel.app" target="_blank" rel="noopener noreferrer"
+                  style={{ fontFamily: serif, fontSize: 18, color: "#1a202c", textDecoration: "none" }}>che-af.vercel.app</a>
+              </div>
+
+              <div style={{ borderBottom: "1px solid rgba(0,0,0,0.06)", paddingBottom: 20 }}>
+                <p style={{ fontFamily: sans, fontSize: 10, fontWeight: 500, letterSpacing: 3, textTransform: "uppercase", color: "#aaa", marginBottom: 6 }}>Mix-R App</p>
+                <a href="https://mix-r.vercel.app" target="_blank" rel="noopener noreferrer"
+                  style={{ fontFamily: serif, fontSize: 18, color: "#1a202c", textDecoration: "none" }}>mix-r.vercel.app</a>
+              </div>
+
+              <div style={{ paddingBottom: 20 }}>
+                <p style={{ fontFamily: sans, fontSize: 10, fontWeight: 500, letterSpacing: 3, textTransform: "uppercase", color: "#aaa", marginBottom: 6 }}>Plant Be <span style={{ color: "#7fb069" }}>· Beta</span></p>
+                <a href="https://plant-be.vercel.app" target="_blank" rel="noopener noreferrer"
+                  style={{ fontFamily: serif, fontSize: 18, color: "#1a202c", textDecoration: "none" }}>plant-be.vercel.app</a>
+              </div>
+
+            </div>
           </div>
 
-          <div style={{ background: "#fff", border: "1px solid #e2e8f0", borderRadius: 20, padding: 40 }}>
-            <h2 style={{ fontFamily: serif, fontSize: 28, fontWeight: 900, color: "#1a202c", marginBottom: 8 }}>Send us a message</h2>
-            <p style={{ fontFamily: sans, fontSize: 14, color: "#718096", marginBottom: 32 }}>We respond within 2 business days.</p>
+          {/* RIGHT — working form */}
+          <div style={{ background: "#fff", border: "1px solid rgba(0,0,0,0.06)", padding: 48, borderRadius: 4 }}>
+            <h2 style={{ fontFamily: serif, fontSize: 32, fontWeight: 600, color: "#1a202c", marginBottom: 8 }}>Send a message</h2>
+            <p style={{ fontFamily: sans, fontSize: 13, color: "#718096", marginBottom: 32 }}>We respond within 2 business days.</p>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            {/* Success message */}
+            {status === "success" && (
+              <div style={{ background: "#f0fff4", border: "1px solid #9ae6b4", borderRadius: 10, padding: "16px 20px", marginBottom: 24 }}>
+                <p style={{ fontFamily: sans, fontSize: 14, color: "#276749", fontWeight: 600, margin: 0 }}>
+                  ✅ Message sent! We'll get back to you within 2 business days.
+                </p>
+              </div>
+            )}
+
+            {/* Error message */}
+            {status === "error" && (
+              <div style={{ background: "#fff5f5", border: "1px solid #fed7d7", borderRadius: 10, padding: "16px 20px", marginBottom: 24 }}>
+                <p style={{ fontFamily: sans, fontSize: 14, color: "#e53e3e", fontWeight: 600, margin: 0 }}>
+                  ❌ Something went wrong. Please email us directly at 4ddiej03@gmail.com
+                </p>
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
                 <div>
-                  <label style={{ fontFamily: sans, fontSize: 13, fontWeight: 600, color: "#4a5568", display: "block", marginBottom: 6 }}>Name</label>
-                  <input style={{ width: "100%", padding: "12px 14px", border: "1px solid #e2e8f0", borderRadius: 10, fontFamily: sans, fontSize: 14, outline: "none", boxSizing: "border-box" }} placeholder="Your name" />
+                  <label style={{ fontFamily: sans, fontSize: 11, fontWeight: 500, letterSpacing: 2, textTransform: "uppercase", color: "#aaa", display: "block", marginBottom: 8 }}>Name *</label>
+                  <input
+                    name="name"
+                    required
+                    style={{ width: "100%", padding: "14px 0", border: "none", borderBottom: "1px solid rgba(0,0,0,0.12)", fontFamily: sans, fontSize: 15, outline: "none", background: "transparent", boxSizing: "border-box", color: "#1a202c" }}
+                    placeholder="Your name"
+                  />
                 </div>
                 <div>
-                  <label style={{ fontFamily: sans, fontSize: 13, fontWeight: 600, color: "#4a5568", display: "block", marginBottom: 6 }}>Email</label>
-                  <input type="email" style={{ width: "100%", padding: "12px 14px", border: "1px solid #e2e8f0", borderRadius: 10, fontFamily: sans, fontSize: 14, outline: "none", boxSizing: "border-box" }} placeholder="your@email.com" />
+                  <label style={{ fontFamily: sans, fontSize: 11, fontWeight: 500, letterSpacing: 2, textTransform: "uppercase", color: "#aaa", display: "block", marginBottom: 8 }}>Email *</label>
+                  <input
+                    name="email"
+                    type="email"
+                    required
+                    style={{ width: "100%", padding: "14px 0", border: "none", borderBottom: "1px solid rgba(0,0,0,0.12)", fontFamily: sans, fontSize: 15, outline: "none", background: "transparent", boxSizing: "border-box", color: "#1a202c" }}
+                    placeholder="your@email.com"
+                  />
                 </div>
               </div>
+
               <div>
-                <label style={{ fontFamily: sans, fontSize: 13, fontWeight: 600, color: "#4a5568", display: "block", marginBottom: 6 }}>Subject</label>
-                <select style={{ width: "100%", padding: "12px 14px", border: "1px solid #e2e8f0", borderRadius: 10, fontFamily: sans, fontSize: 14, outline: "none" }}>
-                  <option>Che AF — General</option>
-                  <option>Che AF — Bug report</option>
-                  <option>Mix-R — General</option>
-                  <option>Mix-R — Bug report</option>
-                  <option>Business enquiry</option>
-                  <option>Press / Media</option>
+                <label style={{ fontFamily: sans, fontSize: 11, fontWeight: 500, letterSpacing: 2, textTransform: "uppercase", color: "#aaa", display: "block", marginBottom: 8 }}>Project Type</label>
+                <select
+                  name="project_type"
+                  style={{ width: "100%", padding: "14px 0", border: "none", borderBottom: "1px solid rgba(0,0,0,0.12)", fontFamily: sans, fontSize: 15, outline: "none", background: "transparent", cursor: "pointer", color: "#1a202c" }}>
+                  <option>App Development</option>
+                  <option>Brand Identity</option>
+                  <option>UI/UX Design</option>
+                  <option>Advertising</option>
+                  <option>Creative Direction</option>
+                  <option>Photography</option>
+                  <option>Food & Drink Content</option>
                   <option>Other</option>
                 </select>
               </div>
+
               <div>
-                <label style={{ fontFamily: sans, fontSize: 13, fontWeight: 600, color: "#4a5568", display: "block", marginBottom: 6 }}>Message</label>
-                <textarea rows={5} style={{ width: "100%", padding: "12px 14px", border: "1px solid #e2e8f0", borderRadius: 10, fontFamily: sans, fontSize: 14, outline: "none", resize: "vertical", boxSizing: "border-box" }} placeholder="How can we help?" />
+                <label style={{ fontFamily: sans, fontSize: 11, fontWeight: 500, letterSpacing: 2, textTransform: "uppercase", color: "#aaa", display: "block", marginBottom: 8 }}>Message *</label>
+                <textarea
+                  name="message"
+                  required
+                  rows={5}
+                  style={{ width: "100%", padding: "14px 0", border: "none", borderBottom: "1px solid rgba(0,0,0,0.12)", fontFamily: sans, fontSize: 15, outline: "none", background: "transparent", resize: "none", boxSizing: "border-box", color: "#1a202c" }}
+                  placeholder="Tell us about your project…"
+                />
               </div>
-              <a href="mailto:4ddiej03@gmail.com"
-                style={{ padding: "14px", background: "#c4622d", color: "#fff", fontFamily: sans, fontWeight: 700, fontSize: 15, textDecoration: "none", textAlign: "center", display: "block", clipPath: "polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%)" }}>
-                Send Message →
-              </a>
-            </div>
+
+              <button
+                type="submit"
+                disabled={status === "sending"}
+                style={{ padding: "16px", background: status === "sending" ? "#ccc" : "#c4622d", color: "#fff", fontFamily: sans, fontWeight: 700, fontSize: 15, border: "none", cursor: status === "sending" ? "not-allowed" : "pointer", textAlign: "center", clipPath: "polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%)", transition: "background 0.2s" }}>
+                {status === "sending" ? "Sending…" : "Send Message →"}
+              </button>
+
+              <p style={{ fontFamily: sans, fontSize: 11, color: "#aaa", textAlign: "center" }}>
+                Your message goes directly to our inbox. We never share your details.
+              </p>
+
+            </form>
           </div>
+
         </div>
       </section>
     </div>
