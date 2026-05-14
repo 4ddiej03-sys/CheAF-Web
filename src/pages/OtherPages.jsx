@@ -310,7 +310,7 @@ export function ContactPage({ navigate }) {
                 <label style={{ fontFamily: sans, fontSize: 13, fontWeight: 600, color: "#4a5568", display: "block", marginBottom: 6 }}>Message</label>
                 <textarea rows={5} style={{ width: "100%", padding: "12px 14px", border: "1px solid #e2e8f0", borderRadius: 10, fontFamily: sans, fontSize: 14, outline: "none", resize: "vertical", boxSizing: "border-box" }} placeholder="How can we help?" />
               </div>
-              <a href="mailto:support@che-af.vercel.app"
+              <a href="mailto:4ddiej03@gmail.com"
                 style={{ padding: "14px", background: "#c4622d", color: "#fff", fontFamily: sans, fontWeight: 700, fontSize: 15, textDecoration: "none", textAlign: "center", display: "block", clipPath: "polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%)" }}>
                 Send Message →
               </a>

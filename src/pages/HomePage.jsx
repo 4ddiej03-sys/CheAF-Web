@@ -1,4 +1,4 @@
-// src/pages/HomePage.jsx
+  // src/pages/HomePage.jsx
 import { useState, useEffect } from "react";
 
 const CHEAF_FEATURES = [
@@ -18,7 +18,7 @@ const MIXR_FEATURES = [
 const TESTIMONIAL_PLACEHOLDER = [
   { name: "Sarah K.", text: "I scan my fridge every Sunday and Che AF plans my whole week. Life changing!", role: "Pioneer #12" },
   { name: "James T.", text: "As a home bartender, Mix-R has introduced me to drinks I never would have found.", role: "Pioneer #34" },
-  { name: "Maria L.", text: "The voice navigation is incredible — my visually impaired sister uses it every day.", role: "Pioneer #67" },
+  { name: "Maria L.", text: "The voice navigation is incredible — my vsually impaired sister uses it every day.", role: "Pioneer #67" },
 ];
 
 export default function HomePage({ navigate }) {
