@@ -1,5 +1,6 @@
 // src/pages/FeaturesPage.jsx
 import React, { useState } from "react";
+
 export function FeaturesPage({ navigate }) {
   const serif = "'Playfair Display', Georgia, serif";
   const sans  = "'DM Sans', system-ui, sans-serif";
