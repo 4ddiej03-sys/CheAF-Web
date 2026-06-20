@@ -273,7 +273,7 @@ export function ContactPage({ navigate }) {
             Whether you have a question, feedback or want to collaborate — we'd love to hear from you. Every great project starts with a conversation.
           </p>
           <div style={{ width: 60, height: 4, background: "#c4622d", marginBottom: 40 }} />
-         <p style={{ fontFamily: serif, fontSize: "clamp(40px, 5vw, 64px)", fontWeight: 900, color: "#1a202c", lineHeight: 0.95, marginBottom: 24 }}>
+         <p style={{ fontFamily: serif, fontSize: "clamp(27px, 5vw, 64px)", fontWeight: 900, color: "#1a202c", lineHeight: 0.95, marginBottom: 24 }}>
             email<br /><em style={{ color: "#c4622d", fontStyle: "italic" }}>4ddiej03@gmail.com.</em>
           </p>
 
