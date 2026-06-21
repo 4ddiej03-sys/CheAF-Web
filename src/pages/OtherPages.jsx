@@ -274,7 +274,7 @@ export function ContactPage({ navigate }) {
           </p>
           <div style={{ width: 60, height: 4, background: "#c4622d", marginBottom: 40 }} />
          <p style={{ fontFamily: serif, fontSize: 27, fontWeight: 900, color: "#1a202c", lineHeight: 0.95, marginBottom: 36 }}>
-            email: 4ddiej03@gmail.com
+            4ddiej03@gmail.com
           </p>
 
 
