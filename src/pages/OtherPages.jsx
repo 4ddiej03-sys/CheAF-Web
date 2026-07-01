@@ -124,7 +124,7 @@ export function PricingPage({ navigate }) {
         <div style={{ maxWidth: 700, margin: "0 auto" }}>
           <p style={{ fontFamily: sans, fontSize: 13, fontWeight: 600, color: "#c4622d", letterSpacing: 3, textTransform: "uppercase", marginBottom: 16 }}>Pricing</p>
           <h1 style={{ fontFamily: serif, fontSize: "clamp(36px, 6vw, 64px)", fontWeight: 900, color: "#f5f0e8", lineHeight: 0.95, marginBottom: 20 }}>
-            Start free.<br /><em style={{ color: "#c4622d", fontStyle: "italic" }}>Enjoy the free</em> if you're ready.
+            Start free,<br /><em style={{ color: "#c4622d", fontStyle: "italic" }}>if you are ready</em>!
           </h1>
           <p style={{ fontFamily: sans, fontSize: 17, color: "rgba(245,240,232,0.6)", lineHeight: 1.7 }}>
             Or join our plans start at $2.99 NZD/month.
