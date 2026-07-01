@@ -157,9 +157,9 @@ export function PricingPage({ navigate }) {
           </div>
 
           <div style={{ marginTop: 60, background: "#0a0a0a", borderRadius: 20, padding: "48px 40px", textAlign: "center" }}>
-            <h2 style={{ fontFamily: serif, fontSize: 32, fontWeight: 900, color: "#f5f0e8", marginBottom: 16 }}>🌟 Pioneer Member Offer</h2>
+            <h2 style={{ fontFamily: serif, fontSize: 32, fontWeight: 900, color: "#f5f0e8", marginBottom: 16 }}>🌟 Enjoy The Free Member Offer</h2>
             <p style={{ fontFamily: sans, fontSize: 16, color: "rgba(245,240,232,0.6)", lineHeight: 1.7, maxWidth: 560, margin: "0 auto 32px" }}>
-              The first 200 users to sign up on either app get full Pro access free forever. This includes both apps if you sign up on each. No credit card required.
+              No credit card required.
             </p>
             <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
               <a href="https://che-af.vercel.app" target="_blank" rel="noopener noreferrer"
