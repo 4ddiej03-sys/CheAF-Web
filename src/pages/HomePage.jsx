@@ -206,7 +206,7 @@ export default function HomePage({ navigate }) {
             Start cooking.<br />Start mixing.<br /><em style={{ fontStyle: "italic", opacity: 0.85 }}>Start today.</em>
           </h2>
           <p style={{ fontFamily: sans, fontSize: 16, color: "rgba(255,255,255,0.8)", marginBottom: 40 }}>
-            Enjoy them for FREE or it's $2.99 NZD/month each.
+            Enjoy the limited AI for FREE or Unlimited AI for $2.99 NZD/month.
           </p>
           <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
             <a href="https://che-af.vercel.app" target="_blank" rel="noopener noreferrer"
